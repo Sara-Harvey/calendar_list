@@ -1,20 +1,20 @@
+
 <!DOCTYPE html>
 <html>
-  
   <head>
-    <meta charset='UTF-8' />
-    <title>Calendar list</title>
+    <meta charset="UTF-8">
     <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
   </head>
 
   <body class='container'>
-    <p>What would you like to add?</p>
 
-      <form method="POST action="/add">
-        <p>New event: <input type="text" name="name"></p>
-        <p>Date: <input type="text" name="date"></p>
-        <p>Submitted by: <input type="text" name="submitted_by"></p>
-        <button type='submit' class='btn btn-primary'>Add this event</button>
-      </form>
+    <form method="POST" action="/add">
+      <p>Event name: <input type="text" name="name"></p>
+      <p>Date: <input type="text" name="event_date"></p>
+      <p>Submitted by:<input type="text" name="submitted_by"></p>
+      
+      <button type='submit' class='btn btn-primary'>Add this event</button>
+    </form>
+
   </body>
 </html>
