@@ -1,5 +1,5 @@
 class ApplicationController < Sinatra::Base
-require 'yaml/store'
+require 'yaml'
 
   configure do
     set :views, "app/views"
@@ -12,6 +12,12 @@ require 'yaml/store'
   end
 
   post '/add' do 
-    "#{params[:event_date]} — #{params[:name]}, submitted by: #{params[:submitted_by]}" 
+    File.open("events.yml", "w") { |file| file.write(params.to_yaml) }
+    erb :add
+  end
+
+  get '/results' do
+     @full_list = YAML.load(File.read("events.yml"))
+     erb :results
   end
 end

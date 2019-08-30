@@ -1,2 +1,4 @@
----
-events: {}
+--- !ruby/hash:Sinatra::IndifferentHash
+name: ocean dance
+event_date: sept 28
+submitted_by: Rhine
