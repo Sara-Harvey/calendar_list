@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href='//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css' rel='stylesheet' />
+  </head>
+
+  <body class='container'>
+    
+    <h2>Your name:</h2>
+    <form method="POST" action="/add">
+
+      User: <input type="text" name="user[name]">
+
+    <h2>Add your event:</h2>
+    
+      <p>Name: <input type="text" name="user[events][][name]"></p>
+      <p>Date: <input type="text" name="user[events][][event_date]"></p>
+      <p>Time: <input type="text" name="user[events][][event_time]"></p>
+      <p>Notes: <input type="text" name="user[events][][notes]"></p>
+      
+      <button type='submit' class='btn btn-primary'>Add this event</button>
+    </form>
+
+  </body>
+</html>

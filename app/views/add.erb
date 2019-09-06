@@ -8,8 +8,19 @@
   </head>
 
   <body class='container'>
-  	<%= "You added: #{params[:event_date]} — #{params[:name]}, submitted by: #{params[:submitted_by]}" %> 
-    <p><a href='/results'>See the full list</a></p>   
+    <div class="user">
+  	<h2>User name: <%= @user.name %></h2><br>
+    </div><br>
+
+  	<h2>Events</h2>
+  	<% @events.each do |event| %>
+        <div class="course">
+  	    <p>Name: <%= event.name %></p><br>
+    	  <p>Date: <%= event.event_date %></p><br>
+     	  <p>Time: <%= event.event_time %></p><br>
+    	  <p>Notes: <%= event.notes %></p><br>
+        </div><br>
+      <% end %>
+
   </body>
 </html>
-

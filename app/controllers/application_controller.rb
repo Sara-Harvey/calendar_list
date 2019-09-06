@@ -1,5 +1,4 @@
 class ApplicationController < Sinatra::Base
-require 'yaml'
 
   configure do
     set :views, "app/views"
@@ -8,16 +7,19 @@ require 'yaml'
 
   get "/" do
     @title = 'Calendar List'
-    erb :index
+    erb :new
   end
 
   post '/add' do 
-    File.open("events.yml", "w") { |file| file.write(params.to_yaml) }
-    erb :add
-  end
+    @title = 'Got it!'
+    
+    @user = User.new(params[:user])
+    params[:user][:events].each do |event_details|
+      Event.new(event_details)
+    end
 
-  get '/results' do
-     @full_list = YAML.load(File.read("events.yml"))
-     erb :results
+    @events = Event.all
+
+    erb :add
   end
 end

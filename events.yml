@@ -1,4 +1,6 @@
 --- !ruby/hash:Sinatra::IndifferentHash
 name: ocean dance
 event_date: sept 28
-submitted_by: Rhine
+event_time: midnight
+notes: wear blue
+submitted_by: Sara B Harvey
