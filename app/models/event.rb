@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+
   attr_accessor :name, :event_date, :event_time, :notes, :submitted_by
   EVENTS = []
 
