@@ -7,6 +7,9 @@ gem 'activerecord', '5.2'
 gem 'sinatra-activerecord'
 gem 'rake'
 
+group :production do
+	gem 'pg'
+end
 
 group :development do
 	gem 'shotgun'
